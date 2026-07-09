@@ -1,247 +1,499 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- light theme -->
-    <style name="GadgetbridgeTheme" parent="Theme.Material3.Light">
-        <item name="textColorPrimary">@color/primarytext_light</item>
-        <item name="textColorSecondary">@color/secondarytext</item>
-        <item name="textColorTertiary">@color/tertiarytext_light</item>
+	<!-- light theme -->
+	<style name="GadgetbridgeTheme" parent="Theme.Material3.Light">
+		<item name="textColorPrimary">@color/md3_on_surface_light</item>
+		<item name="textColorSecondary">@color/md3_on_surface_variant_light</item>
+		<item name="textColorTertiary">@color/md3_outline_light</item>
 
-        <item name="colorPrimary">@color/primarydark_light</item>
-        <item name="colorPrimaryDark">@color/primarydark_light</item>
+		<item name="colorPrimary">@color/md3_primary_light</item>
+		<item name="colorPrimaryDark">@color/md3_primary_light</item>
+		<item name="colorOnPrimary">@color/md3_on_primary_light</item>
+		<item name="colorPrimaryContainer">@color/md3_primary_container_light</item>
+		<item name="colorOnPrimaryContainer">@color/md3_on_primary_container_light</item>
+		<item name="colorSecondary">@color/md3_secondary_light</item>
+		<item name="colorOnSecondary">@color/md3_on_secondary_light</item>
+		<item name="colorSecondaryContainer">@color/md3_secondary_container_light</item>
+		<item name="colorOnSecondaryContainer">@color/md3_on_secondary_container_light</item>
+		<item name="colorTertiary">@color/md3_tertiary_light</item>
+		<item name="colorOnTertiary">@color/md3_on_tertiary_light</item>
+		<item name="colorTertiaryContainer">@color/md3_tertiary_container_light</item>
+		<item name="colorOnTertiaryContainer">@color/md3_on_tertiary_container_light</item>
+		<item name="colorSurface">@color/md3_surface_light</item>
+		<item name="colorOnSurface">@color/md3_on_surface_light</item>
+		<item name="colorOnSurfaceVariant">@color/md3_on_surface_variant_light</item>
+		<item name="colorSurfaceContainer">@color/md3_surface_container_light</item>
+		<item name="colorSurfaceContainerHigh">@color/md3_surface_container_high_light</item>
+		<item name="colorOutline">@color/md3_outline_light</item>
+		<item name="colorOutlineVariant">@color/md3_outline_variant_light</item>
+		<item name="colorAccent">@color/md3_secondary_light</item>
+		<item name="android:colorAccent">@color/md3_secondary_light</item>
+		<item name="colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlHighlight">?attr/colorSecondaryContainer</item>
 
-        <item name="colorPrimaryContainer">@color/accent</item>
-        <item name="colorOnPrimaryContainer">@android:color/white</item>
+		<item name="elevationOverlayEnabled">false</item>
 
-        <item name="elevationOverlayEnabled">false</item>
+		<item name="actionBarStyle">@style/GadgetbridgeTheme.RedActionBar</item>
+		<item name="drawerArrowStyle">@style/GadgetbridgeTheme.DrawerButtonStyle</item>
+		<item name="toolbarStyle">@style/GadgetbridgeTheme.Toolbar</item>
+		<item name="toolbarNavigationButtonStyle">@style/GadgetbridgeTheme.NavigationButtonStyle</item>
+		<item name="actionOverflowButtonStyle">@style/GadgetbridgeTheme.OverflowMenuButton</item>
+		<item name="actionModeStyle">@style/GadgetbridgeTheme.ActionMode</item>
+		<item name="actionModeCloseButtonStyle">@style/GadgetbridgeTheme.ActionModeCloseButton</item>
+		<item name="navigationViewStyle">@style/GadgetbridgeTheme.NavigationView</item>
+		<item name="bottomNavigationStyle">@style/GadgetbridgeTheme.BottomNavigationView</item>
+		<item name="materialCardViewStyle">@style/GadgetbridgeTheme.MaterialCard</item>
+		<item name="buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="android:buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="materialButtonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="borderlessButtonStyle">@style/GadgetbridgeTheme.TextButton</item>
+		<item name="textInputStyle">@style/GadgetbridgeTheme.TextInputLayout</item>
+		<item name="materialAlertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="alertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="floatingActionButtonStyle">@style/GadgetbridgeTheme.FloatingActionButton</item>
+		<item name="switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="android:switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
 
-        <item name="actionBarStyle">@style/GadgetbridgeTheme.RedActionBar</item>
-        <item name="drawerArrowStyle">@style/GadgetbridgeTheme.DrawerButtonStyle</item>
-        <item name="toolbarNavigationButtonStyle">@style/GadgetbridgeTheme.NavigationButtonStyle</item>
-        <item name="actionOverflowButtonStyle">@style/GadgetbridgeTheme.OverflowMenuButton</item>
-        <item name="actionModeStyle">@style/GadgetbridgeTheme.ActionMode</item>
-        <item name="actionModeCloseButtonStyle">@style/GadgetbridgeTheme.ActionModeCloseButton</item>
-        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+		<item name="drawer_header_color">?attr/colorSurfaceContainer</item>
+		<item name="drawer_title_color">?attr/colorOnSurface</item>
+		<item name="cardview_background_color">?attr/colorSurface</item>
+		<item name="actionmenu_icon_color">?attr/colorOnSurface</item>
+		<item name="chart_deep_sleep">@color/chart_deep_sleep_light</item>
+		<item name="chart_light_sleep">@color/chart_light_sleep_light</item>
+		<item name="chart_rem_sleep">@color/chart_rem_sleep_light</item>
+		<item name="chart_awake_sleep">@color/chart_awake_sleep_light</item>
+		<item name="chart_activity">@color/chart_activity_light</item>
+		<item name="chart_not_worn">@color/chart_not_worn_light</item>
+		<item name="spo2_avg_color">@color/spo2_avg_color_light</item>
+		<item name="training_acute_load">@color/training_load</item>
+		<item name="alternate_row_background">@color/alternate_row_background_light</item>
+		<item name="row_separator">@color/row_separator_light</item>
 
-        <item name="drawer_header_color">?attr/colorPrimaryDark</item>
-        <item name="drawer_title_color">@android:color/white</item>
-        <item name="cardview_background_color">@color/cardview_light_background</item>
-        <item name="actionmenu_icon_color">@android:color/white</item>
-        <item name="chart_deep_sleep">@color/chart_deep_sleep_light</item>
-        <item name="chart_light_sleep">@color/chart_light_sleep_light</item>
-        <item name="chart_rem_sleep">@color/chart_rem_sleep_light</item>
-        <item name="chart_awake_sleep">@color/chart_awake_sleep_light</item>
-        <item name="chart_activity">@color/chart_activity_light</item>
-        <item name="chart_not_worn">@color/chart_not_worn_light</item>
-        <item name="spo2_avg_color">@color/spo2_avg_color_light</item>
-        <item name="training_acute_load">@color/training_load</item>
-        <item name="alternate_row_background">@color/alternate_row_background_light</item>
-        <item name="row_separator">@color/row_separator_light</item>
+		<item name="checkmarkColor">?attr/colorPrimary</item>
+		<item name="deviceIconPrimary">?attr/colorPrimary</item>
+		<item name="deviceIconOnPrimary">?attr/colorOnPrimary</item>
+		<item name="deviceIconLight">?attr/colorPrimaryContainer</item>
+		<item name="deviceIconDark">?attr/colorPrimary</item>
 
-        <item name="checkmarkColor">#669900</item>
-        <item name="deviceIconPrimary">#2196f3</item>
-        <item name="deviceIconOnPrimary">#ffffff</item>
-        <item name="deviceIconLight">#1f7fdb</item>
-        <item name="deviceIconDark">#4dabf5</item>
+		<item name="android:windowBackground">?attr/colorSurface</item>
+		<item name="android:statusBarColor">?attr/colorSurface</item>
+		<item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+		<item name="android:navigationBarColor">?attr/colorSurface</item>
+		<!-- FIXME: SDK 21 to 27 has light navbar on light background -->
+		<item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+	</style>
 
-        <item name="android:navigationBarColor">?attr/colorSurface</item>
-        <!-- FIXME: SDK 21 to 27 has light navbar on light background -->
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
-    </style>
+	<!-- dark theme -->
+	<style name="GadgetbridgeThemeDark" parent="Theme.Material3.Dark">
+		<item name="textColorPrimary">@color/md3_on_surface_dark</item>
+		<item name="textColorSecondary">@color/md3_on_surface_variant_dark</item>
+		<item name="textColorTertiary">@color/md3_outline_dark</item>
 
-    <!-- dark theme -->
-    <style name="GadgetbridgeThemeDark" parent="Theme.Material3.Dark">
-        <item name="textColorPrimary">@color/primarytext_dark</item>
-        <item name="textColorSecondary">@color/secondarytext</item>
-        <item name="textColorTertiary">@color/tertiarytext_dark</item>
+		<item name="colorPrimary">@color/md3_primary_dark</item>
+		<item name="colorPrimaryDark">@color/md3_primary_dark</item>
+		<item name="colorOnPrimary">@color/md3_on_primary_dark</item>
+		<item name="colorPrimaryContainer">@color/md3_primary_container_dark</item>
+		<item name="colorOnPrimaryContainer">@color/md3_on_primary_container_dark</item>
+		<item name="colorSecondary">@color/md3_secondary_dark</item>
+		<item name="colorOnSecondary">@color/md3_on_secondary_dark</item>
+		<item name="colorSecondaryContainer">@color/md3_secondary_container_dark</item>
+		<item name="colorOnSecondaryContainer">@color/md3_on_secondary_container_dark</item>
+		<item name="colorTertiary">@color/md3_tertiary_dark</item>
+		<item name="colorOnTertiary">@color/md3_on_tertiary_dark</item>
+		<item name="colorTertiaryContainer">@color/md3_tertiary_container_dark</item>
+		<item name="colorOnTertiaryContainer">@color/md3_on_tertiary_container_dark</item>
+		<item name="colorSurface">@color/md3_surface_dark</item>
+		<item name="colorOnSurface">@color/md3_on_surface_dark</item>
+		<item name="colorOnSurfaceVariant">@color/md3_on_surface_variant_dark</item>
+		<item name="colorSurfaceContainer">@color/md3_surface_container_dark</item>
+		<item name="colorSurfaceContainerHigh">@color/md3_surface_container_high_dark</item>
+		<item name="colorOutline">@color/md3_outline_dark</item>
+		<item name="colorOutlineVariant">@color/md3_outline_variant_dark</item>
+		<item name="colorAccent">@color/md3_secondary_dark</item>
+		<item name="android:colorAccent">@color/md3_secondary_dark</item>
+		<item name="colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlHighlight">?attr/colorSecondaryContainer</item>
 
-        <item name="colorPrimary">@color/primarydark_dark</item>
-        <item name="colorPrimaryDark">@color/primarydark_dark</item>
+		<item name="elevationOverlayEnabled">false</item>
 
-        <item name="colorOnPrimary">@android:color/white</item>
-        <item name="colorPrimaryContainer">@color/accent</item>
-        <item name="colorOnPrimaryContainer">@android:color/white</item>
+		<item name="actionBarStyle">@style/GadgetbridgeTheme.RedActionBar</item>
+		<item name="drawerArrowStyle">@style/GadgetbridgeTheme.DrawerButtonStyle</item>
+		<item name="toolbarStyle">@style/GadgetbridgeTheme.Toolbar</item>
+		<item name="toolbarNavigationButtonStyle">@style/GadgetbridgeTheme.NavigationButtonStyle</item>
+		<item name="actionOverflowButtonStyle">@style/GadgetbridgeTheme.OverflowMenuButton</item>
+		<item name="actionModeStyle">@style/GadgetbridgeTheme.ActionMode</item>
+		<item name="actionModeCloseButtonStyle">@style/GadgetbridgeTheme.ActionModeCloseButton</item>
+		<item name="navigationViewStyle">@style/GadgetbridgeTheme.NavigationView</item>
+		<item name="bottomNavigationStyle">@style/GadgetbridgeTheme.BottomNavigationView</item>
+		<item name="materialCardViewStyle">@style/GadgetbridgeTheme.MaterialCard</item>
+		<item name="buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="android:buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="materialButtonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="borderlessButtonStyle">@style/GadgetbridgeTheme.TextButton</item>
+		<item name="textInputStyle">@style/GadgetbridgeTheme.TextInputLayout</item>
+		<item name="materialAlertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="alertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="floatingActionButtonStyle">@style/GadgetbridgeTheme.FloatingActionButton</item>
+		<item name="switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="android:switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
 
-        <item name="elevationOverlayEnabled">false</item>
+		<item name="drawer_header_color">?attr/colorSurfaceContainer</item>
+		<item name="drawer_title_color">?attr/colorOnSurface</item>
+		<item name="cardview_background_color">?attr/colorSurface</item>
+		<item name="actionmenu_icon_color">?attr/colorOnSurface</item>
+		<item name="chart_deep_sleep">@color/chart_deep_sleep_dark</item>
+		<item name="chart_light_sleep">@color/chart_light_sleep_dark</item>
+		<item name="chart_rem_sleep">@color/chart_rem_sleep_dark</item>
+		<item name="chart_awake_sleep">@color/chart_awake_sleep_dark</item>
+		<item name="chart_activity">@color/chart_activity_dark</item>
+		<item name="chart_not_worn">@color/chart_not_worn_dark</item>
+		<item name="spo2_avg_color">@color/spo2_avg_color_dark</item>
+		<item name="training_acute_load">@color/training_load_dark</item>
+		<item name="alternate_row_background">@color/alternate_row_background_dark</item>
+		<item name="row_separator">@color/row_separator_dark</item>
 
-        <item name="actionBarStyle">@style/GadgetbridgeTheme.RedActionBar</item>
-        <item name="drawerArrowStyle">@style/GadgetbridgeTheme.DrawerButtonStyle</item>
-        <item name="toolbarNavigationButtonStyle">@style/GadgetbridgeTheme.NavigationButtonStyle</item>
-        <item name="actionOverflowButtonStyle">@style/GadgetbridgeTheme.OverflowMenuButton</item>
-        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+		<item name="checkmarkColor">?attr/colorPrimary</item>
+		<item name="deviceIconPrimary">?attr/colorPrimary</item>
+		<item name="deviceIconOnPrimary">?attr/colorOnPrimary</item>
+		<item name="deviceIconLight">?attr/colorPrimaryContainer</item>
+		<item name="deviceIconDark">?attr/colorPrimary</item>
 
-        <item name="drawer_header_color">?attr/colorPrimaryDark</item>
-        <item name="drawer_title_color">@android:color/white</item>
-        <item name="cardview_background_color">@color/cardview_dark_background</item>
-        <item name="actionmenu_icon_color">@android:color/white</item>
-        <item name="chart_deep_sleep">@color/chart_deep_sleep_dark</item>
-        <item name="chart_light_sleep">@color/chart_light_sleep_dark</item>
-        <item name="chart_rem_sleep">@color/chart_rem_sleep_dark</item>
-        <item name="chart_awake_sleep">@color/chart_awake_sleep_dark</item>
-        <item name="chart_activity">@color/chart_activity_dark</item>
-        <item name="chart_not_worn">@color/chart_not_worn_dark</item>
-        <item name="spo2_avg_color">@color/spo2_avg_color_dark</item>
-        <item name="training_acute_load">@color/training_load_dark</item>
-        <item name="alternate_row_background">@color/alternate_row_background_dark</item>
-        <item name="row_separator">@color/row_separator_dark</item>
+		<item name="android:windowBackground">?attr/colorSurface</item>
+		<item name="android:statusBarColor">?attr/colorSurface</item>
+		<item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+		<item name="android:navigationBarColor">?attr/colorSurface</item>
+		<item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+	</style>
 
-        <item name="checkmarkColor">#669900</item>
-        <item name="deviceIconPrimary">#2196f3</item>
-        <item name="deviceIconOnPrimary">#ffffff</item>
-        <item name="deviceIconLight">#1f7fdb</item>
-        <item name="deviceIconDark">#4dabf5</item>
+	<!-- black theme -->
+	<style name="GadgetbridgeThemeBlack" parent="GadgetbridgeThemeDark">
+		<item name="android:windowBackground">@android:color/black</item>
+		<item name="android:navigationBarColor">@android:color/black</item>
+		<item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+	</style>
 
-        <item name="android:navigationBarColor">?attr/colorSurface</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
-    </style>
+	<!-- Material 3 dynamic color (Material You) themes -->
+	<style name="GadgetbridgeThemeDynamicLight" parent="Theme.Material3.DynamicColors.Light">
+		<item name="textColorPrimary">?attr/colorOnSurface</item>
+		<item name="textColorSecondary">?attr/colorOnSurfaceVariant</item>
+		<item name="textColorTertiary">?attr/colorOutline</item>
+		<item name="actionBarStyle">@style/GadgetbridgeThemeDynamic.ActionBar</item>
+		<item name="drawerArrowStyle">@style/GadgetbridgeTheme.DrawerButtonStyle</item>
+		<item name="toolbarStyle">@style/GadgetbridgeTheme.Toolbar</item>
+		<item name="toolbarNavigationButtonStyle">@style/GadgetbridgeTheme.NavigationButtonStyle</item>
+		<item name="actionOverflowButtonStyle">@style/GadgetbridgeTheme.OverflowMenuButton</item>
+		<item name="actionOverflowMenuStyle">@style/GadgetbridgeTheme.OverflowMenuStyle</item>
+		<item name="actionModeStyle">@style/GadgetbridgeTheme.ActionMode</item>
+		<item name="actionModeCloseButtonStyle">@style/GadgetbridgeTheme.ActionModeCloseButton</item>
+		<item name="navigationViewStyle">@style/GadgetbridgeTheme.NavigationView</item>
+		<item name="bottomNavigationStyle">@style/GadgetbridgeTheme.BottomNavigationView</item>
+		<item name="materialCardViewStyle">@style/GadgetbridgeTheme.MaterialCard</item>
+		<item name="buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="android:buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="materialButtonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="borderlessButtonStyle">@style/GadgetbridgeTheme.TextButton</item>
+		<item name="textInputStyle">@style/GadgetbridgeTheme.TextInputLayout</item>
+		<item name="materialAlertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="alertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="floatingActionButtonStyle">@style/GadgetbridgeTheme.FloatingActionButton</item>
+		<item name="switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="android:switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="android:statusBarColor">?attr/colorSurface</item>
+		<item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+		<item name="colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlHighlight">?attr/colorSecondaryContainer</item>
+		<item name="drawer_header_color">?attr/colorSurfaceContainer</item>
+		<item name="drawer_title_color">?attr/colorOnSurface</item>
+		<item name="cardview_background_color">?attr/colorSurface</item>
+		<item name="actionmenu_icon_color">?attr/colorOnSurface</item>
+		<item name="alternate_row_background">?attr/colorSecondaryContainer</item>
+		<item name="row_separator">@color/row_separator_light</item>
+		<item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+		<item name="android:navigationBarColor">?attr/colorSurface</item>
+		<!-- FIXME: SDK 21 to 27 has light navbar on light background -->
+		<item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+		<item name="checkmarkColor">?attr/colorPrimary</item>
+		<item name="deviceIconPrimary">?attr/colorPrimary</item>
+		<item name="deviceIconOnPrimary">?attr/colorOnPrimary</item>
+		<item name="deviceIconLight">?attr/colorPrimaryContainer</item>
+		<item name="deviceIconDark">?attr/colorPrimary</item>
+		<item name="spo2_avg_color">@color/spo2_avg_color_light</item>
+	</style>
+	<style name="GadgetbridgeThemeDynamicDark" parent="Theme.Material3.DynamicColors.Dark">
+		<item name="textColorPrimary">?attr/colorOnSurface</item>
+		<item name="textColorSecondary">?attr/colorOnSurfaceVariant</item>
+		<item name="textColorTertiary">?attr/colorOutline</item>
+		<item name="actionBarStyle">@style/GadgetbridgeThemeDynamic.ActionBar</item>
+		<item name="drawerArrowStyle">@style/GadgetbridgeTheme.DrawerButtonStyle</item>
+		<item name="toolbarStyle">@style/GadgetbridgeTheme.Toolbar</item>
+		<item name="toolbarNavigationButtonStyle">@style/GadgetbridgeTheme.NavigationButtonStyle</item>
+		<item name="actionOverflowButtonStyle">@style/GadgetbridgeTheme.OverflowMenuButton</item>
+		<item name="actionOverflowMenuStyle">@style/GadgetbridgeTheme.OverflowMenuStyle</item>
+		<item name="actionModeStyle">@style/GadgetbridgeTheme.ActionMode</item>
+		<item name="actionModeCloseButtonStyle">@style/GadgetbridgeTheme.ActionModeCloseButton</item>
+		<item name="navigationViewStyle">@style/GadgetbridgeTheme.NavigationView</item>
+		<item name="bottomNavigationStyle">@style/GadgetbridgeTheme.BottomNavigationView</item>
+		<item name="materialCardViewStyle">@style/GadgetbridgeTheme.MaterialCard</item>
+		<item name="buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="android:buttonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="materialButtonStyle">@style/GadgetbridgeTheme.Button</item>
+		<item name="borderlessButtonStyle">@style/GadgetbridgeTheme.TextButton</item>
+		<item name="textInputStyle">@style/GadgetbridgeTheme.TextInputLayout</item>
+		<item name="materialAlertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="alertDialogTheme">@style/GadgetbridgeTheme.Dialog</item>
+		<item name="floatingActionButtonStyle">@style/GadgetbridgeTheme.FloatingActionButton</item>
+		<item name="switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="android:switchStyle">@style/GadgetbridgeTheme.Switch</item>
+		<item name="android:statusBarColor">?attr/colorSurface</item>
+		<item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+		<item name="colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlActivated">?attr/colorPrimary</item>
+		<item name="android:colorControlHighlight">?attr/colorSecondaryContainer</item>
+		<item name="drawer_header_color">?attr/colorSurfaceContainer</item>
+		<item name="drawer_title_color">?attr/colorOnSurface</item>
+		<item name="cardview_background_color">?attr/colorSurface</item>
+		<item name="actionmenu_icon_color">?attr/colorOnSurface</item>
+		<item name="alternate_row_background">?attr/colorSecondaryContainer</item>
+		<item name="row_separator">@color/row_separator_dark</item>
+		<item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+		<item name="android:navigationBarColor">?attr/colorSurface</item>
+		<item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+		<item name="checkmarkColor">?attr/colorPrimary</item>
+		<item name="deviceIconPrimary">?attr/colorPrimary</item>
+		<item name="deviceIconOnPrimary">?attr/colorOnPrimary</item>
+		<item name="deviceIconLight">?attr/colorPrimaryContainer</item>
+		<item name="deviceIconDark">?attr/colorPrimary</item>
+		<item name="spo2_avg_color">@color/spo2_avg_color_dark</item>
+	</style>
+	<style name="GadgetbridgeThemeDynamicDarkAmoled" parent="GadgetbridgeThemeDynamicDark">
+		<item name="android:windowBackground">@android:color/black</item>
+	</style>
 
-    <!-- black theme -->
-    <style name="GadgetbridgeThemeBlack" parent="GadgetbridgeThemeDark">
-        <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:navigationBarColor">@android:color/black</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
-    </style>
+	<!-- theme variants without action bar -->
+	<style name="GadgetbridgeTheme.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+	<style name="GadgetbridgeThemeDark.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+	<style name="GadgetbridgeThemeBlack.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+	<style name="GadgetbridgeThemeDynamicLight.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+	<style name="GadgetbridgeThemeDynamicDark.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+	<style name="GadgetbridgeThemeDynamicDarkAmoled.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
 
-    <!-- Material 3 dynamic color (Material You) themes -->
-    <style name="GadgetbridgeThemeDynamicLight" parent="Theme.Material3.DynamicColors.Light">
-        <item name="textColorPrimary">@color/primarytext_light</item>
-        <item name="actionBarStyle">@style/GadgetbridgeThemeDynamic.ActionBar</item>
-        <item name="actionOverflowMenuStyle">@style/GadgetbridgeTheme.OverflowMenuStyle</item>
-        <item name="android:statusBarColor">?attr/colorSurface</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
-        <item name="android:colorControlHighlight">?attr/colorPrimary</item>
-        <item name="drawer_header_color">?attr/colorSurface</item>
-        <item name="drawer_title_color">?attr/colorOnSurface</item>
-        <item name="cardview_background_color">?attr/colorSurface</item>
-        <item name="actionmenu_icon_color">?attr/colorOnSurface</item>
-        <item name="alternate_row_background">?attr/colorSecondaryContainer</item>
-        <item name="row_separator">@color/row_separator_light</item>
-        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
-        <item name="android:navigationBarColor">?attr/colorSurface</item>
-        <!-- FIXME: SDK 21 to 27 has light navbar on light background -->
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
-        <item name="checkmarkColor">?attr/colorPrimary</item>
-        <item name="deviceIconPrimary">?attr/colorPrimary</item>
-        <item name="deviceIconOnPrimary">?attr/colorOnPrimary</item>
-        <item name="deviceIconLight">?attr/colorPrimaryVariant</item>
-        <item name="deviceIconDark">?attr/colorPrimaryDark</item>
-        <item name="spo2_avg_color">@color/spo2_avg_color_light</item>
-    </style>
-    <style name="GadgetbridgeThemeDynamicDark" parent="Theme.Material3.DynamicColors.Dark">
-        <item name="textColorPrimary">@color/primarytext_dark</item>
-        <item name="actionBarStyle">@style/GadgetbridgeThemeDynamic.ActionBar</item>
-        <item name="actionOverflowMenuStyle">@style/GadgetbridgeTheme.OverflowMenuStyle</item>
-        <item name="android:statusBarColor">?attr/colorSurface</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
-        <item name="android:colorControlHighlight">?attr/colorPrimary</item>
-        <item name="drawer_header_color">?attr/colorSurface</item>
-        <item name="drawer_title_color">?attr/colorOnSurface</item>
-        <item name="cardview_background_color">?attr/colorSurface</item>
-        <item name="actionmenu_icon_color">?attr/colorOnSurface</item>
-        <item name="alternate_row_background">?attr/colorSecondaryContainer</item>
-        <item name="row_separator">@color/row_separator_dark</item>
-        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
-        <item name="android:navigationBarColor">?attr/colorSurface</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
-        <item name="checkmarkColor">?attr/colorPrimary</item>
-        <item name="deviceIconPrimary">?attr/colorPrimary</item>
-        <item name="deviceIconOnPrimary">?attr/colorOnPrimary</item>
-        <item name="deviceIconLight">?attr/colorPrimaryVariant</item>
-        <item name="deviceIconDark">?attr/colorPrimaryDark</item>
-        <item name="spo2_avg_color">@color/spo2_avg_color_dark</item>
-    </style>
-    <style name="GadgetbridgeThemeDynamicDarkAmoled" parent="GadgetbridgeThemeDynamicDark">
-        <item name="android:windowBackground">@android:color/black</item>
-    </style>
+	<!-- action bar styles -->
+	<style name="GadgetbridgeTheme.RedActionBar" parent="Widget.Material3.ActionBar.Solid">
+		<item name="titleTextStyle">@style/GadgetbridgeTheme.ActionBarTitleStyle</item>
+		<item name="background">?attr/colorSurface</item>
+		<item name="elevation">0dp</item>
+	</style>
+	<style name="GadgetbridgeThemeDynamic.ActionBar" parent="Widget.Material3.ActionBar.Solid">
+		<item name="titleTextStyle">@style/GadgetbridgeTheme.ActionBarTitleStyle</item>
+		<item name="background">?attr/colorSurface</item>
+		<item name="elevation">0dp</item>
+	</style>
+	<style name="GadgetbridgeTheme.DrawerButtonStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+		<item name="spinBars">true</item>
+		<item name="color">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.NavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+		<item name="tint">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.OverflowMenuButton" parent="Widget.AppCompat.ActionButton.Overflow">
+		<item name="tint">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.ActionMode" parent="Widget.AppCompat.ActionMode">
+		<item name="background">?attr/colorPrimaryContainer</item>
+		<item name="titleTextStyle">@style/GadgetbridgeTheme.ActionModeTitleStyle</item>
+		<item name="subtitleTextStyle">@style/GadgetbridgeTheme.ActionModeTitleStyle</item>
+		<item name="android:theme">@style/GadgetbridgeTheme.ActionModeOverlay</item>
+	</style>
+	<style name="GadgetbridgeTheme.ActionModeOverlay" parent="">
+		<item name="colorControlNormal">?attr/colorOnPrimaryContainer</item>
+		<item name="actionmenu_icon_color">?attr/colorOnPrimaryContainer</item>
+	</style>
+	<style name="GadgetbridgeTheme.ActionModeCloseButton" parent="Widget.AppCompat.ActionButton">
+		<item name="android:tint">?attr/colorOnPrimaryContainer</item>
+	</style>
+	<style name="GadgetbridgeTheme.ActionBarTitleStyle" parent="TextAppearance.Material3.ActionBar.Title">
+		<item name="android:textColor">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.ActionModeTitleStyle" parent="TextAppearance.Material3.ActionBar.Title">
+		<item name="android:textColor">?attr/colorOnPrimaryContainer</item>
+	</style>
+	<style name="GadgetbridgeTheme.OverflowMenuStyle" parent="Widget.Material3.PopupMenu.Overflow">
+		<item name="android:popupBackground">?attr/colorSecondaryContainer</item>
+		<item name="android:textColorPrimary">?attr/colorOnSecondaryContainer</item>
+	</style>
 
-    <!-- theme variants without action bar -->
-    <style name="GadgetbridgeTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="GadgetbridgeThemeDark.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="GadgetbridgeThemeBlack.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="GadgetbridgeThemeDynamicLight.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="GadgetbridgeThemeDynamicDark.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="GadgetbridgeThemeDynamicDarkAmoled.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+	<style name="GadgetbridgeTheme.Toolbar" parent="Widget.Material3.Toolbar">
+		<item name="android:background">?attr/colorSurface</item>
+		<item name="titleTextColor">?attr/colorOnSurface</item>
+		<item name="subtitleTextColor">?attr/colorOnSurfaceVariant</item>
+		<item name="navigationIconTint">?attr/colorOnSurface</item>
+		<item name="titleTextAppearance">@style/GadgetbridgeTheme.TextAppearance.ToolbarTitle</item>
+		<item name="android:elevation">0dp</item>
+	</style>
+	<style name="GadgetbridgeTheme.NavigationView" parent="Widget.Material3.NavigationView">
+		<item name="android:background">?attr/colorSurfaceContainer</item>
+		<item name="itemIconTint">@color/gb_navigation_item</item>
+		<item name="itemTextColor">@color/gb_navigation_item</item>
+		<item name="itemTextAppearance">@style/GadgetbridgeTheme.TextAppearance.NavigationLabel</item>
+		<item name="itemShapeAppearance">@style/GadgetbridgeTheme.Shape.NavigationItem</item>
+		<item name="itemShapeFillColor">?attr/colorSecondaryContainer</item>
+		<item name="itemHorizontalPadding">@dimen/md3_space_3</item>
+		<item name="itemIconPadding">@dimen/md3_space_4</item>
+	</style>
+	<style name="GadgetbridgeTheme.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+		<item name="backgroundTint">?attr/colorSurfaceContainer</item>
+		<item name="itemIconTint">@color/gb_bottom_navigation_item</item>
+		<item name="itemTextColor">@color/gb_bottom_navigation_item</item>
+		<item name="itemTextAppearanceActive">@style/GadgetbridgeTheme.TextAppearance.NavigationLabel</item>
+		<item name="itemTextAppearanceInactive">@style/GadgetbridgeTheme.TextAppearance.NavigationLabel</item>
+		<item name="itemActiveIndicatorColor">?attr/colorSecondaryContainer</item>
+		<item name="itemRippleColor">?attr/colorSecondaryContainer</item>
+		<item name="labelVisibilityMode">labeled</item>
+	</style>
+	<style name="GadgetbridgeTheme.MaterialCard" parent="Widget.Material3.CardView.Outlined">
+		<item name="cardBackgroundColor">?attr/colorSurface</item>
+		<item name="cardCornerRadius">@dimen/md3_corner_medium</item>
+		<item name="cardElevation">0dp</item>
+		<item name="strokeColor">@color/gb_card_stroke</item>
+		<item name="strokeWidth">1dp</item>
+		<item name="rippleColor">?attr/colorSecondaryContainer</item>
+	</style>
+	<style name="GadgetbridgeTheme.Button" parent="Widget.Material3.Button">
+		<item name="cornerRadius">@dimen/md3_corner_extra_large</item>
+		<item name="android:textAppearance">@style/GadgetbridgeTheme.TextAppearance.Button</item>
+	</style>
+	<style name="GadgetbridgeTheme.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+		<item name="cornerRadius">@dimen/md3_corner_extra_large</item>
+		<item name="strokeColor">?attr/colorOutline</item>
+		<item name="android:textAppearance">@style/GadgetbridgeTheme.TextAppearance.Button</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextButton" parent="Widget.Material3.Button.TextButton">
+		<item name="cornerRadius">@dimen/md3_corner_extra_large</item>
+		<item name="android:textAppearance">@style/GadgetbridgeTheme.TextAppearance.Button</item>
+	</style>
+	<style name="GadgetbridgeTheme.TonalButton" parent="Widget.Material3.Button.TonalButton">
+		<item name="cornerRadius">@dimen/md3_corner_extra_large</item>
+		<item name="android:textAppearance">@style/GadgetbridgeTheme.TextAppearance.Button</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+		<item name="boxBackgroundColor">?attr/colorSurface</item>
+		<item name="boxStrokeColor">?attr/colorOutline</item>
+		<item name="hintTextColor">?attr/colorOnSurfaceVariant</item>
+		<item name="boxCornerRadiusTopStart">@dimen/md3_corner_small</item>
+		<item name="boxCornerRadiusTopEnd">@dimen/md3_corner_small</item>
+		<item name="boxCornerRadiusBottomStart">@dimen/md3_corner_small</item>
+		<item name="boxCornerRadiusBottomEnd">@dimen/md3_corner_small</item>
+	</style>
+	<style name="GadgetbridgeTheme.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+		<item name="colorSurface">?attr/colorSurfaceContainerHigh</item>
+		<item name="colorOnSurface">?attr/colorOnSurface</item>
+		<item name="shapeAppearanceOverlay">@style/GadgetbridgeTheme.Shape.Dialog</item>
+		<item name="materialAlertDialogTitleTextStyle">@style/GadgetbridgeTheme.TextAppearance.DialogTitle</item>
+		<item name="materialAlertDialogBodyTextStyle">@style/GadgetbridgeTheme.TextAppearance.DialogBody</item>
+		<item name="buttonBarButtonStyle">@style/GadgetbridgeTheme.TextButton</item>
+	</style>
+	<style name="GadgetbridgeTheme.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+		<item name="useMaterialThemeColors">true</item>
+	</style>
+	<style name="GadgetbridgeTheme.FloatingActionButton" parent="Widget.Material3.FloatingActionButton.Primary">
+		<item name="backgroundTint">?attr/colorPrimaryContainer</item>
+		<item name="tint">?attr/colorOnPrimaryContainer</item>
+		<item name="shapeAppearanceOverlay">@style/GadgetbridgeTheme.Shape.FloatingActionButton</item>
+	</style>
+	<style name="GadgetbridgeTheme.Preference" parent="@style/Preference.Material">
+		<item name="iconSpaceReserved">false</item>
+		<item name="allowDividerAbove">false</item>
+		<item name="allowDividerBelow">true</item>
+	</style>
+	<style name="GadgetbridgeTheme.Preference.Category" parent="@style/PreferenceCategory.Material">
+		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+	</style>
+	<style name="GadgetbridgeTheme.Shape.NavigationItem" parent="">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">@dimen/md3_corner_large</item>
+	</style>
+	<style name="GadgetbridgeTheme.Shape.Dialog" parent="">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">@dimen/md3_corner_extra_large</item>
+	</style>
+	<style name="GadgetbridgeTheme.Shape.FloatingActionButton" parent="">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">@dimen/md3_corner_large</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+		<item name="android:textColor">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.NavigationLabel" parent="TextAppearance.Material3.LabelMedium">
+		<item name="android:textColor">@color/gb_navigation_item</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.CardTitle" parent="TextAppearance.Material3.TitleMedium">
+		<item name="android:textColor">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.CardBody" parent="TextAppearance.Material3.BodyMedium">
+		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.Button" parent="TextAppearance.Material3.LabelLarge" />
+	<style name="GadgetbridgeTheme.TextAppearance.PreferenceTitle" parent="TextAppearance.Material3.BodyLarge">
+		<item name="android:textColor">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.PreferenceSummary" parent="TextAppearance.Material3.BodyMedium">
+		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.DialogTitle" parent="TextAppearance.Material3.HeadlineSmall">
+		<item name="android:textColor">?attr/colorOnSurface</item>
+	</style>
+	<style name="GadgetbridgeTheme.TextAppearance.DialogBody" parent="TextAppearance.Material3.BodyMedium">
+		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+	</style>
 
-    <!-- action bar styles -->
-    <style name="GadgetbridgeTheme.RedActionBar" parent="Widget.Material3.ActionBar.Solid">
-        <item name="titleTextStyle">@style/GadgetbridgeTheme.ActionBarTitleStyle</item>
-        <item name="background">@color/primarydark_dark</item>
-    </style>
-    <style name="GadgetbridgeThemeDynamic.ActionBar" parent="Widget.Material3.ActionBar.Solid">
-        <item name="background">?attr/colorSurface</item>
-        <item name="elevation">0dp</item>
-    </style>
-    <style name="GadgetbridgeTheme.DrawerButtonStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
-        <item name="spinBars">true</item>
-        <item name="color">@android:color/white</item>
-    </style>
-    <style name="GadgetbridgeTheme.NavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="tint">@android:color/white</item>
-    </style>
-    <style name="GadgetbridgeTheme.OverflowMenuButton" parent="Widget.AppCompat.ActionButton.Overflow">
-        <item name="tint">@android:color/white</item>
-    </style>
-    <style name="GadgetbridgeTheme.ActionMode" parent="Widget.AppCompat.ActionMode">
-        <item name="background">@color/primary_light</item>
-        <item name="titleTextStyle">@style/GadgetbridgeTheme.ActionBarTitleStyle</item>
-        <item name="subtitleTextStyle">@style/GadgetbridgeTheme.ActionBarTitleStyle</item>
-        <item name="android:theme">@style/GadgetbridgeTheme.ActionModeOverlay</item>
-    </style>
-    <style name="GadgetbridgeTheme.ActionModeOverlay" parent="">
-        <item name="colorControlNormal">@android:color/white</item>
-        <item name="actionmenu_icon_color">@android:color/white</item>
-    </style>
-    <style name="GadgetbridgeTheme.ActionModeCloseButton" parent="Widget.AppCompat.ActionButton">
-        <item name="android:tint">@android:color/white</item>
-    </style>
-    <style name="GadgetbridgeTheme.ActionBarTitleStyle" parent="TextAppearance.Material3.ActionBar.Title">
-        <item name="android:textColor">@color/primarytext_dark</item>
-    </style>
-    <style name="GadgetbridgeTheme.OverflowMenuStyle" parent="Widget.Material3.PopupMenu.Overflow">
-        <item name="android:popupBackground">?attr/colorSecondaryContainer</item>
-        <item name="android:textColorPrimary">?attr/colorOnSecondaryContainer</item>
-    </style>
+	<!-- splash screen -->
+	<style name="SplashTheme" parent="GadgetbridgeTheme.NoActionBar">
+		<item name="android:statusBarColor">?attr/colorPrimary</item>
+		<item name="android:navigationBarColor">?attr/colorPrimary</item>
+		<item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+		<item name="android:windowBackground">@drawable/splash</item>
+	</style>
 
-    <!-- splash screen -->
-    <style name="SplashTheme" parent="GadgetbridgeTheme.NoActionBar">
-        <item name="android:statusBarColor">@color/primarydark_dark</item>
-        <item name="android:navigationBarColor">@color/primarydark_dark</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
-        <item name="android:windowBackground">@drawable/splash</item>
-    </style>
-
-    <!-- preferences screens -->
-    <style name="AppPreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
-        <item name="switchPreferenceCompatStyle">@style/AppSwitchPreference</item>
-    </style>
-    <style name="AppSwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
-        <item name="widgetLayout">@layout/preference_material_switch</item>
-    </style>
-    <style name="GridTile">
-        <item name="android:background">?android:attr/windowBackground</item>
-        <item name="android:padding">15dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:layout_columnWeight">1</item>
-        <item name="android:layout_marginBottom">2dp</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_rowWeight">1</item>
-    </style>
+	<!-- preferences screens -->
+	<style name="AppPreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
+		<item name="preferenceStyle">@style/GadgetbridgeTheme.Preference</item>
+		<item name="preferenceCategoryStyle">@style/GadgetbridgeTheme.Preference.Category</item>
+		<item name="switchPreferenceCompatStyle">@style/AppSwitchPreference</item>
+	</style>
+	<style name="AppSwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
+		<item name="widgetLayout">@layout/preference_material_switch</item>
+	</style>
+	<style name="GridTile">
+		<item name="android:background">?android:attr/windowBackground</item>
+		<item name="android:padding">15dp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_columnWeight">1</item>
+		<item name="android:layout_marginBottom">2dp</item>
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_rowWeight">1</item>
+	</style>
 </resources>

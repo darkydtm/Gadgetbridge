@@ -1,0 +1,166 @@
+name: Android CI/CD
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+    tags:
+      - "v*"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.jvmargs=-Xmx4g -Dfile.encoding=UTF-8
+
+jobs:
+  verify:
+    name: Verify Android project
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: >-
+            tools
+            platform-tools
+            platforms;android-36
+            build-tools;36.1.0
+          log-accepted-android-sdk-licenses: false
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Run lint, tests, and debug builds
+        run: ./gradlew --no-daemon lintMainlineDebug testMainlineDebugUnitTest assembleMainlineDebug assembleBanglejsDebug
+
+      - name: Upload verification reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: android-ci-reports
+          path: |
+            app/build/reports/lint/
+            app/build/reports/tests/
+            app/build/test-results/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  package:
+    name: Package Android APKs
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    needs:
+      - verify
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: >-
+            tools
+            platform-tools
+            platforms;android-36
+            build-tools;36.1.0
+          log-accepted-android-sdk-licenses: false
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Prepare nightly signing
+        env:
+          NIGHTLY_KEY_ALIAS: ${{ secrets.ANDROID_NIGHTLY_KEY_ALIAS }}
+          NIGHTLY_KEY_PASSWORD: ${{ secrets.ANDROID_NIGHTLY_KEY_PASSWORD }}
+          NIGHTLY_STORE_BASE64: ${{ secrets.ANDROID_NIGHTLY_KEYSTORE_BASE64 }}
+          NIGHTLY_STORE_PASSWORD: ${{ secrets.ANDROID_NIGHTLY_STORE_PASSWORD }}
+        run: |
+          configured=0
+          [[ -n "$NIGHTLY_KEY_ALIAS" ]] && configured=1
+          [[ -n "$NIGHTLY_KEY_PASSWORD" ]] && configured=1
+          [[ -n "$NIGHTLY_STORE_BASE64" ]] && configured=1
+          [[ -n "$NIGHTLY_STORE_PASSWORD" ]] && configured=1
+
+          if [[ "$configured" -eq 1 ]]; then
+            if [[ -z "$NIGHTLY_KEY_ALIAS" || -z "$NIGHTLY_KEY_PASSWORD" || -z "$NIGHTLY_STORE_BASE64" || -z "$NIGHTLY_STORE_PASSWORD" ]]; then
+              echo "::error::Set all Android nightly signing secrets or leave all of them empty."
+              exit 1
+            fi
+
+            keystore="$RUNNER_TEMP/nightly.jks"
+            printf "%s" "$NIGHTLY_STORE_BASE64" | base64 --decode > "$keystore"
+            signing_args="-Dnightly_store_file=$keystore -Dnightly_store_password=$NIGHTLY_STORE_PASSWORD -Dnightly_key_alias=$NIGHTLY_KEY_ALIAS -Dnightly_key_password=$NIGHTLY_KEY_PASSWORD"
+            printf "NIGHTLY_SIGNING_ARGS=%s\n" "$signing_args" >> "$GITHUB_ENV"
+          else
+            printf "NIGHTLY_SIGNING_ARGS=\n" >> "$GITHUB_ENV"
+          fi
+
+      - name: Build distributable APKs
+        run: ./gradlew --no-daemon $NIGHTLY_SIGNING_ARGS assembleMainlineNightly assembleBanglejsNightly assembleMainlineNopebble
+
+      - name: Upload APK artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: gadgetbridge-apks
+          path: app/build/outputs/apk/**/*.apk
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish tag release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="$GITHUB_REF_NAME"
+          mapfile -t apks < <(find app/build/outputs/apk -type f -name "*.apk" | sort)
+
+          if [[ "${#apks[@]}" -eq 0 ]]; then
+            echo "::error::No APK files found."
+            exit 1
+          fi
+
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            gh release create "$tag" --title "$tag" --notes "Automated build for $tag"
+          fi
+
+          gh release upload "$tag" "${apks[@]}" --clobber
