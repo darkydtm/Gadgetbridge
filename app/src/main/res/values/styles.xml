@@ -369,9 +369,12 @@
 		<item name="itemTextColor">@color/gb_bottom_navigation_item</item>
 		<item name="itemTextAppearanceActive">@style/GadgetbridgeTheme.TextAppearance.NavigationLabel</item>
 		<item name="itemTextAppearanceInactive">@style/GadgetbridgeTheme.TextAppearance.NavigationLabel</item>
-		<item name="itemActiveIndicatorColor">?attr/colorSecondaryContainer</item>
+		<item name="itemActiveIndicatorStyle">@style/GadgetbridgeTheme.BottomNavigationView.ActiveIndicator</item>
 		<item name="itemRippleColor">?attr/colorSecondaryContainer</item>
 		<item name="labelVisibilityMode">labeled</item>
+	</style>
+	<style name="GadgetbridgeTheme.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+		<item name="android:color">?attr/colorSecondaryContainer</item>
 	</style>
 	<style name="GadgetbridgeTheme.MaterialCard" parent="Widget.Material3.CardView.Outlined">
 		<item name="cardBackgroundColor">?attr/colorSurface</item>
@@ -428,7 +431,7 @@
 		<item name="allowDividerAbove">false</item>
 		<item name="allowDividerBelow">true</item>
 	</style>
-	<style name="GadgetbridgeTheme.Preference.Category" parent="@style/PreferenceCategory.Material">
+	<style name="GadgetbridgeTheme.Preference.Category" parent="@style/Preference.Category.Material">
 		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
 	</style>
 	<style name="GadgetbridgeTheme.Shape.NavigationItem" parent="">
