@@ -1,19 +1,29 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
 
-    <!--
+	<!--
 Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
-    -->
-    <dimen name="about_margin">4dp</dimen>
-    <dimen name="widget_margin">8dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="nav_header_vertical_spacing">16dp</dimen>
-    <dimen name="nav_header_height">160dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="dialog_margin">20dp</dimen>
-    <dimen name="um25_value_text_size">60dp</dimen>
-    <dimen name="um25_value_text_size_small">30dp</dimen>
+	-->
+	<dimen name="about_margin">4dp</dimen>
+	<dimen name="widget_margin">8dp</dimen>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="nav_header_vertical_spacing">16dp</dimen>
+	<dimen name="nav_header_height">160dp</dimen>
+	<dimen name="fab_margin">16dp</dimen>
+	<dimen name="dialog_margin">20dp</dimen>
+	<dimen name="md3_space_1">4dp</dimen>
+	<dimen name="md3_space_2">8dp</dimen>
+	<dimen name="md3_space_3">12dp</dimen>
+	<dimen name="md3_space_4">16dp</dimen>
+	<dimen name="md3_space_6">24dp</dimen>
+	<dimen name="md3_corner_small">8dp</dimen>
+	<dimen name="md3_corner_medium">12dp</dimen>
+	<dimen name="md3_corner_large">16dp</dimen>
+	<dimen name="md3_corner_extra_large">28dp</dimen>
+	<dimen name="md3_navigation_drawer_width">320dp</dimen>
+	<dimen name="um25_value_text_size">60dp</dimen>
+	<dimen name="um25_value_text_size_small">30dp</dimen>
 </resources>
