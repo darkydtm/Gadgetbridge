@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="primary_light" type="color">#ff3d00</color>
-	<color name="primarydark_light" type="color">#dd2c00</color>
+	<color name="primary_light" type="color">#006A60</color>
+	<color name="primarydark_light" type="color">#005047</color>
 
-	<color name="primary_dark" type="color">#ff3d00</color>
-	<color name="primarydark_dark" type="color">#dd2c00</color>
+	<color name="primary_dark" type="color">#006A60</color>
+	<color name="primarydark_dark" type="color">#005047</color>
 
-	<color name="accent" type="color">#0091ea</color>
+	<color name="accent" type="color">#006A60</color>
 
 	<color name="md3_primary_light" type="color">#006A60</color>
 	<color name="md3_on_primary_light" type="color">#FFFFFF</color>
