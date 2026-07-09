@@ -21,6 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.DisplayMetrics;
@@ -44,6 +45,7 @@ import androidx.gridlayout.widget.GridLayout;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.color.MaterialColors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -361,15 +363,20 @@ public class DashboardFragment extends Fragment implements MenuProvider {
                 GridLayout.spec(GridLayout.UNDEFINED, columnSpan, GridLayout.FILL, 1f)
         );
         layoutParams.width = 0;
-        int pixels_8dp = (int) (8 * scale + 0.5f);
-        layoutParams.setMargins(pixels_8dp, pixels_8dp, pixels_8dp, pixels_8dp);
+        int cardMargin = getResources().getDimensionPixelSize(R.dimen.md3_space_2);
+        layoutParams.setMargins(cardMargin, cardMargin, cardMargin, cardMargin);
 
         if (cardsEnabled) {
             MaterialCardView card = new MaterialCardView(requireActivity());
-            int pixels_4dp = (int) (4 * scale + 0.5f);
-            card.setRadius(pixels_4dp);
-            card.setCardElevation(pixels_4dp);
-            card.setContentPadding(pixels_4dp, pixels_4dp, pixels_4dp, pixels_4dp);
+            int contentPadding = getResources().getDimensionPixelSize(R.dimen.md3_space_1);
+            int strokeWidth = Math.max(1, Math.round(scale));
+            card.setRadius(getResources().getDimension(R.dimen.md3_corner_medium));
+            card.setCardElevation(0);
+            card.setStrokeWidth(strokeWidth);
+            card.setStrokeColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorOutlineVariant));
+            card.setCardBackgroundColor(ColorStateList.valueOf(MaterialColors.getColor(card, com.google.android.material.R.attr.colorSurface)));
+            card.setRippleColor(ColorStateList.valueOf(MaterialColors.getColor(card, com.google.android.material.R.attr.colorSecondaryContainer)));
+            card.setContentPadding(contentPadding, contentPadding, contentPadding, contentPadding);
             card.setLayoutParams(layoutParams);
             card.addView(fragment);
             gridLayout.addView(card);
