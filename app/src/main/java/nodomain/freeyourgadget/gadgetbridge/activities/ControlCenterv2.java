@@ -25,16 +25,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
@@ -210,16 +207,6 @@ public class ControlCenterv2 extends AppCompatActivity
                 this, drawer, toolbar, R.string.controlcenter_navigation_drawer_open, R.string.controlcenter_navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-        if (GBApplication.areDynamicColorsEnabled()) {
-            TypedValue typedValue = new TypedValue();
-            Resources.Theme theme = getTheme();
-            theme.resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true);
-            @ColorInt int toolbarBackground = typedValue.data;
-            toolbar.setBackgroundColor(toolbarBackground);
-        } else {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.primarydark_light));
-            toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
-        }
 
         // Configure ViewPager2 with fragment adapter and default fragment
         viewPager = findViewById(R.id.dashboard_viewpager);
