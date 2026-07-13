@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - material3
     tags:
       - "v*"
   workflow_dispatch:
