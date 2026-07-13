@@ -143,6 +143,15 @@ android {
     }
 
     signingConfigs {
+        release {
+            if (System.getProperty("release_store_file") != null) {
+                storeFile file(System.getProperty("release_store_file"))
+                storePassword System.getProperty("release_store_password")
+                keyAlias System.getProperty("release_key_alias")
+                keyPassword System.getProperty("release_key_password")
+            }
+        }
+
         nightly {
             if (System.getProperty("nightly_store_file") != null) {
                 storeFile file(System.getProperty("nightly_store_file"))
@@ -195,6 +204,10 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+            if (System.getProperty("release_store_file") != null) {
+                signingConfig = signingConfigs.release
+            }
         }
 
         nightly {
