@@ -412,7 +412,6 @@
 	</style>
 	<style name="GadgetbridgeTheme.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
 		<item name="colorSurface">?attr/colorSurfaceContainerHigh</item>
-		<item name="colorOnSurface">?attr/colorOnSurface</item>
 		<item name="shapeAppearanceOverlay">@style/GadgetbridgeTheme.Shape.Dialog</item>
 		<item name="materialAlertDialogTitleTextStyle">@style/GadgetbridgeTheme.TextAppearance.DialogTitle</item>
 		<item name="materialAlertDialogBodyTextStyle">@style/GadgetbridgeTheme.TextAppearance.DialogBody</item>
